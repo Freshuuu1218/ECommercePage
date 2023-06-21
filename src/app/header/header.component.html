@@ -1,1 +1,19 @@
-<p>header works!</p>
+<div class="content">
+  <div class="left">
+    <fa-icon [icon]="burger" (click)="showMenu()" *ngIf="!menu"></fa-icon>
+    <fa-icon [icon]="close" (click)="showMenu()" *ngIf="menu"></fa-icon>
+
+    <img src="/assets/logo.svg" alt="logo" />
+  </div>
+
+  <div class="right">
+    <fa-icon [icon]="cartIcon" (click)="showCart()"></fa-icon>
+    <img src="/assets/image-avatar.png" alt="avatar" />
+  </div>
+</div>
+<div class="menu" *ngIf="menu">
+  <app-mobile-menu></app-mobile-menu>
+</div>
+<div class="cart" *ngIf="cart">
+  <app-cart></app-cart>
+</div>

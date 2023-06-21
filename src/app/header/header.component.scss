@@ -1,0 +1,33 @@
+@import "src/variables";
+.content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 25px;
+  .left {
+    display: flex;
+    align-items: center;
+    fa-icon {
+      color: $lightText;
+      font-size: 20px;
+      margin-right: 16px;
+      margin-top: 5px;
+      position: relative;
+      z-index: 1000;
+    }
+  }
+  .right {
+    display: flex;
+    align-items: flex-start;
+    fa-icon {
+      margin-top: 2px;
+      color: $lightText;
+      font-size: 20px;
+      margin-right: 22px;
+    }
+    img {
+      width: 24px;
+    }
+  }
+}

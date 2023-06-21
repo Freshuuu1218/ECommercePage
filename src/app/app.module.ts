@@ -9,6 +9,7 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { ImagesComponent } from './images/images.component';
 import { DescriptionComponent } from './description/description.component';
 import { CountComponent } from './count/count.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CountComponent } from './count/count.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
