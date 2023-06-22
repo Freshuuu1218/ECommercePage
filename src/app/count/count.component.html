@@ -1,1 +1,9 @@
-<p>count works!</p>
+<div class="container">
+  <div class="minus">
+    <fa-icon [icon]="minus" (click)="remove()"></fa-icon>
+  </div>
+  <span>{{ count }}</span>
+  <div class="plus">
+    <fa-icon [icon]="plus" (click)="add()"></fa-icon>
+  </div>
+</div>

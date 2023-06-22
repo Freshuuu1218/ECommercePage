@@ -1,1 +1,37 @@
-
+@import "src/variables";
+.images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: -100;
+  width: 375px;
+  height: 375px;
+  left: calc((100% - 375px) / 2);
+  img {
+    width: 100%;
+  }
+  .previous,
+  .next {
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    fa-icon {
+      color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .previous {
+    left: 16px;
+  }
+  .next {
+    right: 16px;
+  }
+}

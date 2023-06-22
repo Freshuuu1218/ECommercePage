@@ -1,1 +1,33 @@
-<p>images works!</p>
+<div class="images">
+  <img
+    src="/assets/image-product-1.jpg"
+    alt="image"
+    class="image"
+    *ngIf="number == 1"
+  />
+  <img
+    src="/assets/image-product-2.jpg"
+    alt="image"
+    class="image"
+    *ngIf="number == 2"
+  />
+  <img
+    src="/assets/image-product-3.jpg"
+    alt="image"
+    class="image"
+    *ngIf="number == 3"
+  />
+  <img
+    src="/assets/image-product-4.jpg"
+    alt="image"
+    class="image"
+    *ngIf="number == 4"
+  />
+
+  <div class="previous">
+    <fa-icon [icon]="previous" (click)="getPrevious()"></fa-icon>
+  </div>
+  <div class="next">
+    <fa-icon [icon]="next" (click)="getNext()"></fa-icon>
+  </div>
+</div>
