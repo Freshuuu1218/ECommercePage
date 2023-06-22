@@ -12,7 +12,9 @@
     <small>$250.00</small>
   </div>
   <div class="count">
-    <app-count></app-count>
+    <app-count (howMany)="newCount($event)"></app-count>
   </div>
-  <button><fa-icon [icon]="cart"></fa-icon> Add to cart</button>
+  <button (click)="addToCart()">
+    <fa-icon [icon]="cart"></fa-icon> Add to cart
+  </button>
 </div>

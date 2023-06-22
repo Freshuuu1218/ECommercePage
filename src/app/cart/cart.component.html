@@ -2,8 +2,8 @@
   <h1>Cart</h1>
   <span class="spacer"></span>
   <div class="cart">
-    <p>Your cart is empty.</p>
-    <!-- <div class="item">
+    <p id="empty" *ngIf="empty === true">Your cart is empty.</p>
+    <div class="item" *ngFor="let item of items">
       <img src="/assets/image-product-1-thumbnail.jpg" alt="image" />
 
       <div class="text">
@@ -14,7 +14,7 @@
         >
       </div>
       <fa-icon [icon]="clear"></fa-icon>
-    </div>   
-    <button><p>Checkout</p></button>-->
+    </div>
+    <button *ngIf="empty === false"><p>Checkout</p></button>
   </div>
 </div>
