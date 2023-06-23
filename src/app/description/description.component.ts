@@ -39,7 +39,6 @@ export class DescriptionComponent {
       this.items = [];
       this.items.push(this.item);
       this.cartItems.items = this.items;
-      console.log(this.cartItems.items);
     }
   }
   remove() {

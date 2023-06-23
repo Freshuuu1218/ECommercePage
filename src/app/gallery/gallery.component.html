@@ -1,46 +1,18 @@
-<div class="imagesMobile" *ngIf="width < 1440">
-  <img
-    src="/assets/image-product-1.jpg"
-    alt="image"
-    class="image"
-    *ngIf="number == 1"
-  />
-  <img
-    src="/assets/image-product-2.jpg"
-    alt="image"
-    class="image"
-    *ngIf="number == 2"
-  />
-  <img
-    src="/assets/image-product-3.jpg"
-    alt="image"
-    class="image"
-    *ngIf="number == 3"
-  />
-  <img
-    src="/assets/image-product-4.jpg"
-    alt="image"
-    class="image"
-    *ngIf="number == 4"
-  />
+<div class="background" *ngIf="gallery">
+  <fa-icon class="close" [icon]="close" (click)="closeGallery(false)"></fa-icon>
+  <div class="bigImage">
+    <span class="previous" (click)="getPrevious()">
+      <fa-icon [icon]="previous"></fa-icon
+    ></span>
 
-  <div class="previous">
-    <fa-icon [icon]="previous" (click)="getPrevious()"></fa-icon>
-  </div>
-  <div class="next">
-    <fa-icon [icon]="next" (click)="getNext()"></fa-icon>
-  </div>
-</div>
-<div class="imagesDesktop" *ngIf="width >= 1440">
-  <div class="gallery" *ngIf="gallery">
-    <app-gallery (gallery)="closeGallery($event)"></app-gallery>
-  </div>
-  <div class="bigImage" (click)="showGallery()">
     <img
       src="/assets/image-product-{{ number }}.jpg"
       alt="image"
       class="image"
     />
+    <span class="next" (click)="getNext()">
+      <fa-icon [icon]="next"></fa-icon
+    ></span>
   </div>
   <div class="smallImages">
     <div class="imageSmall clicked">

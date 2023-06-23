@@ -1,42 +1,35 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {
   faChevronLeft,
   faChevronRight,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-images',
-  templateUrl: './images.component.html',
-  styleUrls: ['./images.component.scss'],
+  selector: 'app-gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.scss'],
 })
-export class ImagesComponent implements OnInit {
-  number = 1;
+export class GalleryComponent {
+  close = faXmark;
   previous = faChevronLeft;
   next = faChevronRight;
-  width = 0;
-  gallery = false;
-  ngOnInit(): void {
-    this.width = window.innerWidth;
-  }
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.width = event.target.innerWidth;
-  }
-  // mobile
+  number = 1;
+  @Output() gallery = new EventEmitter<boolean>();
   getPrevious() {
     this.number = this.number - 1;
     if (this.number === 0) {
       this.number = 4;
     }
+    this.changeImage(this.number);
   }
   getNext() {
     this.number = this.number + 1;
     if (this.number === 5) {
       this.number = 1;
     }
+    this.changeImage(this.number);
   }
-
-  // desktop
   changeImage(id: number) {
     this.number = id;
     let images = document.querySelectorAll('.imageSmall');
@@ -45,11 +38,7 @@ export class ImagesComponent implements OnInit {
     });
     images[id - 1].classList.add('clicked');
   }
-
-  showGallery() {
-    this.gallery = true;
-  }
   closeGallery(value: boolean) {
-    this.gallery = value;
+    this.gallery.emit(value);
   }
 }

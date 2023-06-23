@@ -10,6 +10,7 @@ import { ImagesComponent } from './images/images.component';
 import { DescriptionComponent } from './description/description.component';
 import { CountComponent } from './count/count.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MobileMenuComponent,
     ImagesComponent,
     DescriptionComponent,
-    CountComponent
+    CountComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
