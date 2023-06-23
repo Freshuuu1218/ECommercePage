@@ -5,6 +5,7 @@ import { cartItem } from './interfaces';
 })
 export class CartItemsService {
   items: cartItem[] = [];
-
+  clearCart: boolean = false;
+  totalCount: number = 0;
   constructor() {}
 }

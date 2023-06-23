@@ -31,12 +31,25 @@ export class DescriptionComponent {
   };
 
   addToCart() {
+    this.cartItems.clearCart = false;
     this.totalCount += this.count;
     this.item.count = this.totalCount;
-    this.item.total = this.totalCount * this.cost;
+    this.item.total = this.item.count * this.cost;
     this.items = [];
     this.items.push(this.item);
     this.cartItems.items = this.items;
     console.log(this.cartItems.items);
   }
+  remove() {
+    if (this.cartItems.clearCart) {
+      this.totalCount = 0;
+      this.items = [];
+    }
+  }
+  // removeFromCart() {
+  //   if (this.cartItems.clearCart) {
+  //     this.items = [];
+  //     this.totalCount = 0;
+  //   }
+  // }
 }

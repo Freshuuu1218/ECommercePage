@@ -13,7 +13,7 @@
           <span>$ {{ item.total | number : "1.2-2" }}</span></small
         >
       </div>
-      <fa-icon [icon]="clear"></fa-icon>
+      <fa-icon [icon]="clear" (click)="removeFormCart()"></fa-icon>
     </div>
     <button *ngIf="empty === false"><p>Checkout</p></button>
   </div>

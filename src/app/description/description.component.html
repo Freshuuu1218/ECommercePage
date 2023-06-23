@@ -11,7 +11,7 @@
     <span>50%</span>
     <small>$250.00</small>
   </div>
-  <div class="count">
+  <div class="count" (click)="remove()">
     <app-count (howMany)="newCount($event)"></app-count>
   </div>
   <button (click)="addToCart()">

@@ -4,6 +4,7 @@ import {
   faCartShopping,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
+import { CartItemsService } from 'src/cart-items.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent {
   burger = faBars;
   cartIcon = faCartShopping;
   close = faXmark;
-
+  constructor(private cartItems: CartItemsService) {}
   menu: boolean = false;
   showMenu() {
     this.cart = false;

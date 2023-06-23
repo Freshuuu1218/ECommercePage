@@ -20,4 +20,11 @@ export class CartComponent implements OnInit {
       this.empty = true;
     }
   }
+  removeFormCart() {
+    this.items[0].count = 0;
+    this.items = [];
+    this.cartItems.items = [];
+    this.empty = true;
+    this.cartItems.clearCart = true;
+  }
 }
