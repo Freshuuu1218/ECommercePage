@@ -8,6 +8,10 @@
   border-radius: 10px;
   fa-icon {
     color: $orange;
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
   }
   span {
     color: $text;

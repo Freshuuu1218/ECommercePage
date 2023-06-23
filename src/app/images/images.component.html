@@ -1,4 +1,4 @@
-<div class="images">
+<div class="imagesMobile" *ngIf="width < 1440">
   <img
     src="/assets/image-product-1.jpg"
     alt="image"
@@ -29,5 +29,52 @@
   </div>
   <div class="next">
     <fa-icon [icon]="next" (click)="getNext()"></fa-icon>
+  </div>
+</div>
+<div class="imagesDesktop" *ngIf="width >= 1440">
+  <div class="bigImage">
+    <img
+      src="/assets/image-product-{{ number }}.jpg"
+      alt="image"
+      class="image"
+    />
+  </div>
+  <div class="smallImages">
+    <div class="imageSmall clicked">
+      <img
+        src="/assets/image-product-1-thumbnail.jpg"
+        alt="image"
+        class="image"
+        id="image1"
+        (click)="changeImage(1)"
+      />
+    </div>
+    <div class="imageSmall">
+      <img
+        src="/assets/image-product-2-thumbnail.jpg"
+        alt="image"
+        class="image"
+        id="image2"
+        (click)="changeImage(2)"
+      />
+    </div>
+    <div class="imageSmall">
+      <img
+        src="/assets/image-product-3-thumbnail.jpg"
+        alt="image"
+        class="image"
+        id="image3"
+        (click)="changeImage(3)"
+      />
+    </div>
+    <div class="imageSmall">
+      <img
+        src="/assets/image-product-4-thumbnail.jpg"
+        alt="image"
+        class="image"
+        id="image4"
+        (click)="changeImage(4)"
+      />
+    </div>
   </div>
 </div>

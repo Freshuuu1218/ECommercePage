@@ -26,15 +26,61 @@
       font-size: 20px;
       margin-right: 22px;
     }
-    span {
-      background-color: $orange;
-      color: $white;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-    }
     img {
       width: 24px;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .content {
+    padding: 0;
+    padding-bottom: 32px;
+    margin: 28px 165px 90px;
+    border-bottom: 2px solid $grey;
+    .left {
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 58px;
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        li {
+          color: $lightText;
+          font-size: 15px;
+          line-height: 26px;
+          position: relative;
+          cursor: pointer;
+          &:hover > span {
+            position: absolute;
+            top: 68px;
+            background-color: $orange;
+            width: 100%;
+            height: 4px;
+            display: block;
+          }
+          &:nth-child(even) {
+            margin: 0 32px;
+          }
+        }
+      }
+    }
+    .right {
+      align-items: center;
+      fa-icon {
+        cursor: pointer;
+        margin-right: 46px;
+      }
+      img {
+        width: 50px;
+        &:hover {
+          border: 2px solid $orange;
+          cursor: pointer;
+          border-radius: 50%;
+        }
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 @import "src/variables";
-.images {
+.imagesMobile {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,5 +33,42 @@
   }
   .next {
     right: 16px;
+  }
+}
+@media (min-width: 1440px) {
+  .imagesDesktop {
+    width: 50%;
+    .bigImage {
+      width: 100%;
+      margin-bottom: 32px;
+      img {
+        width: 469px;
+        border-radius: 15px;
+      }
+    }
+    .smallImages {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      column-gap: 31px;
+      .imageSmall {
+        border-radius: 15px;
+        width: 94px;
+        height: 94px;
+        &.clicked {
+          border: 3px solid $orange;
+          & > img {
+            opacity: 0.5;
+          }
+        }
+        img {
+          width: 88px;
+          border-radius: 10px;
+          &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
 }

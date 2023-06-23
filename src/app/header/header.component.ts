@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import {
   faBars,
   faCartShopping,
@@ -15,6 +15,11 @@ export class HeaderComponent {
   burger = faBars;
   cartIcon = faCartShopping;
   close = faXmark;
+  width = window.innerWidth;
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.width = event.target.innerWidth;
+  }
   constructor(private cartItems: CartItemsService) {}
   menu: boolean = false;
   showMenu() {

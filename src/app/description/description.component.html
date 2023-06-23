@@ -7,14 +7,19 @@
     offer.
   </p>
   <div class="cost">
-    <strong>$125.00</strong>
-    <span>50%</span>
+    <div class="top">
+      <strong>$125.00</strong>
+      <span>50%</span>
+    </div>
+
     <small>$250.00</small>
   </div>
-  <div class="count" (click)="remove()">
-    <app-count (howMany)="newCount($event)"></app-count>
+  <div class="bottom">
+    <div class="count" (click)="remove()">
+      <app-count (howMany)="newCount($event)"></app-count>
+    </div>
+    <button (click)="addToCart()">
+      <fa-icon [icon]="cart"></fa-icon> Add to cart
+    </button>
   </div>
-  <button (click)="addToCart()">
-    <fa-icon [icon]="cart"></fa-icon> Add to cart
-  </button>
 </div>

@@ -31,14 +31,16 @@ export class DescriptionComponent {
   };
 
   addToCart() {
-    this.cartItems.clearCart = false;
-    this.totalCount += this.count;
-    this.item.count = this.totalCount;
-    this.item.total = this.item.count * this.cost;
-    this.items = [];
-    this.items.push(this.item);
-    this.cartItems.items = this.items;
-    console.log(this.cartItems.items);
+    if (this.count > 0) {
+      this.cartItems.clearCart = false;
+      this.totalCount += this.count;
+      this.item.count = this.totalCount;
+      this.item.total = this.item.count * this.cost;
+      this.items = [];
+      this.items.push(this.item);
+      this.cartItems.items = this.items;
+      console.log(this.cartItems.items);
+    }
   }
   remove() {
     if (this.cartItems.clearCart) {
@@ -46,10 +48,4 @@ export class DescriptionComponent {
       this.items = [];
     }
   }
-  // removeFromCart() {
-  //   if (this.cartItems.clearCart) {
-  //     this.items = [];
-  //     this.totalCount = 0;
-  //   }
-  // }
 }

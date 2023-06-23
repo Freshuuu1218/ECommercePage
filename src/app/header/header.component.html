@@ -1,13 +1,27 @@
 <div class="content">
   <div class="left">
-    <fa-icon [icon]="burger" (click)="showMenu()" *ngIf="!menu"></fa-icon>
-    <fa-icon [icon]="close" (click)="showMenu()" *ngIf="menu"></fa-icon>
+    <div class="icon" *ngIf="width < 1440">
+      <fa-icon [icon]="burger" (click)="showMenu()" *ngIf="!menu"></fa-icon>
+      <fa-icon [icon]="close" (click)="showMenu()" *ngIf="menu"></fa-icon>
+    </div>
 
     <img src="/assets/logo.svg" alt="logo" />
+    <ul class="nav" *ngIf="width >= 1440">
+      <li>Collections <span></span></li>
+      <li>Men<span></span></li>
+      <li>Women<span></span></li>
+      <li>About<span></span></li>
+      <li>Contact<span></span></li>
+    </ul>
   </div>
 
   <div class="right">
-    <fa-icon [icon]="cartIcon" (click)="showCart()"></fa-icon>
+    <fa-icon
+      [icon]="cartIcon"
+      (click)="showCart()"
+      (mouseenter)="showCart()"
+      (mouseleave)="showCart()"
+    ></fa-icon>
     <img src="/assets/image-avatar.png" alt="avatar" />
   </div>
 </div>
